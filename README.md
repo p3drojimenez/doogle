@@ -6,7 +6,8 @@ Simple Vuejs app using https://dog.ceo
 ### Clone the repository
 
 `git clone https://github.com/p3drojimenez/doogle.git doogle`
-`cd doogle``
+
+`cd doogle`
 
 ### Build Docker Image and run 
 
