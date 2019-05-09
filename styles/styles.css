@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-Content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 50px;
+    color: #292C34;
+}
+.container{
+    
+}

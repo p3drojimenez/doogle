@@ -11,8 +11,16 @@
     <h1>Doogle</h1>
     <div id="app">
         <div class="container">
-            <div>
-
+            <div class="search-container">
+                <div class="search-form">
+                    <select v-model="breedSelected">
+                        <option disabled value="">Please select one breed</option>
+                        <option v-for='breed in breedList' >{{ breed }}</option>
+                      </select>
+                </div>
+                <div class="erro-container">
+                    {{ errMessage }}
+                </div>
             </div>
         </div>
         {{ $data }}
