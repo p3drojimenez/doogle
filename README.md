@@ -11,5 +11,6 @@ Simple Vuejs app using https://dog.ceo
 ### Build Docker Image and run 
 
 `docker build -t doogle . `
+
 `docker run --rm -it -p 8080:80 doogle`
 
