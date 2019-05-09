@@ -13,14 +13,18 @@
         <div class="container">
             <div class="search-container">
                 <div class="search-form">
-                    <select v-model="breedSelected">
+                    <select v-model="breedSelected" @change='onSelectedBreed'>
                         <option disabled value="">Please select one breed</option>
                         <option v-for='breed in breedList' >{{ breed }}</option>
-                      </select>
+                    </select>
+                    {{ breedSelected }}
                 </div>
                 <div class="erro-container">
                     {{ errMessage }}
                 </div>
+            </div>
+            <div class="breed-grid">
+                {{ dogPictureList }}
             </div>
         </div>
         {{ $data }}
