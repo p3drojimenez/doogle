@@ -2,6 +2,7 @@ new Vue({
     el: '#app',
     data: { 
         breedList: [],
+        breed:'',
         errMessage: '',
         breedSelected: '',
         dogPictureList: []
@@ -35,6 +36,18 @@ new Vue({
         },
         onSelectedBreed(){
             this.getDogPictures(this.breedSelected)
+        },
+        searchBreed(){
+            this.dogPictureList = []
+            this.errMessage=''
+            let search = this.breesListSearch.filter( (item) => item === this.breed )
+            console.log(search)
+            if(search.length != 0){
+                 this.getDogPictures(this.breed)
+            }else{
+                this.errMessage = 'We can´t brind an amaizing dog pictures if you don´t write any one'
+            }
+       
         }
     },
 })

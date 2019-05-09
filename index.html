@@ -18,6 +18,8 @@
                         <option v-for='breed in breedList' >{{ breed }}</option>
                     </select>
                     {{ breedSelected }}
+                    <input type="text" v-model:value="breed" class='input' placeholder="search a simple dog...">
+                    <button class="seach-button" @click="searchBreed()">Search</button>
                 </div>
                 <div class="erro-container">
                     {{ errMessage }}
