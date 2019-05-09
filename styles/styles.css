@@ -9,21 +9,59 @@ h1 {
     font-size: 50px;
     color: #292C34;
 }
+h2 {
+    font-size: 20px;
+    color: #171F33;
+    text-transform: uppercase;
+}
 .container{
-    
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
 }
 
 .search-container{
-
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+.select-input{
+    height: 40px;
+    text-transform: capitalize;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
 }
 .input{
-
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    box-sizing: border-box;
 }
 .seach-button{
-    
+    margin-left: 20px;
+    padding: 10px 20px;
+    width: 200px;
+    height: 40px;
+
 }
 .erro-container{
-
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+}
+.error-text{
+    color: '#E21A22'
 }
 
 

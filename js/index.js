@@ -5,7 +5,8 @@ new Vue({
         breed:'',
         errMessage: '',
         breedSelected: '',
-        dogPictureList: []
+        dogPictureList: [],
+        breedName: ''
     },
     mounted() {
         this.getBreedList()
@@ -16,7 +17,6 @@ new Vue({
             axios.get(API)
           .then( (response) => {
               const res = response.data.message
-                console.log(res)
               this.breedList = Object.keys(res),
               this.breesListSearch = this.breedList
           })
@@ -28,6 +28,7 @@ new Vue({
             const api = 'https://dog.ceo/api/breed/'+ breed +'/images'
             axios.get(api)
             .then( (response) => {
+                this.breedName = breed
                 this.dogPictureList= response.data.message
             })
             .catch(function (error) {
@@ -35,11 +36,14 @@ new Vue({
             })
         },
         onSelectedBreed(){
+            this.breed= ''
             this.getDogPictures(this.breedSelected)
         },
         searchBreed(){
             this.dogPictureList = []
             this.errMessage=''
+            this.breedSelected= '',
+            this.breedName = ''
             let search = this.breesListSearch.filter( (item) => item === this.breed )
             console.log(search)
             if(search.length != 0){

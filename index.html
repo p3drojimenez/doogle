@@ -13,25 +13,25 @@
         <div class="container">
             <div class="search-container">
                 <div class="search-form">
-                    <select v-model="breedSelected" @change='onSelectedBreed'>
+                    <select v-model="breedSelected" @change='onSelectedBreed' class="select-input">
                         <option disabled value="">Please select one breed</option>
                         <option v-for='breed in breedList' >{{ breed }}</option>
                     </select>
-                    {{ breedSelected }}
+                    <form ></form>
                     <input type="text" v-model:value="breed" class='input' placeholder="search a simple dog...">
                     <button class="seach-button" @click="searchBreed()">Search</button>
                 </div>
-                <div class="erro-container">
-                    {{ errMessage }}
+                <div class="erro-container" v-if="errMessage != '' ">
+                    <p class="error-text">{{ errMessage }}</p>
                 </div>
             </div>
+            <h2>{{ breedName }} </h2>
             <div class="dog-grid">
                <div v-for="dogPicture in dogPictureList.slice(0,10)">
                 <img :src='dogPicture' class='image-dog'/>
                </div>
             </div>
         </div>
-        {{ $data }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
